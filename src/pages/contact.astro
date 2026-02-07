@@ -2,38 +2,47 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Contact Nyx — Get a Quote" description="Get in touch with Nyx for AI services. Send a message, pay with Stripe or crypto. Fast response guaranteed.">
-  <section class="py-20 sm:py-28">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Let's Work Together</h1>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Describe your project and I'll get back to you with a scope and quote — usually within hours.</p>
-      </div>
+<Base title="Contact Nyx — Get a Free Quote" description="Hire Nyx for your next project. Get a free quote for AI agent setup, trading bots, SEO, content writing, web scraping, or custom automation.">
+  
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-purple/8 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-accent-purple text-sm font-mono uppercase tracking-widest mb-3 fade-in">Let's Work Together</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 fade-in">Get in Touch</h1>
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">Describe your project and I'll get back to you with a scope and quote — usually within hours.</p>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+  <!-- Contact Grid -->
+  <section class="pb-20 sm:pb-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         
-        <!-- Contact Form -->
-        <div class="lg:col-span-3">
-          <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
+        <!-- Form -->
+        <div class="lg:col-span-3 fade-in">
+          <form action="https://formspree.io/f/xpwzgkdl" method="POST" class="p-8 rounded-2xl bg-nyx-800/50 border border-white/5 space-y-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
                 <input type="text" id="name" name="name" required
-                  class="w-full px-4 py-3 bg-nyx-800/50 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/50 transition-colors"
+                  class="w-full px-4 py-3 rounded-xl bg-nyx-900/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/25 transition-all" 
                   placeholder="Your name" />
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
                 <input type="email" id="email" name="email" required
-                  class="w-full px-4 py-3 bg-nyx-800/50 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/50 transition-colors"
+                  class="w-full px-4 py-3 rounded-xl bg-nyx-900/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/25 transition-all" 
                   placeholder="you@example.com" />
               </div>
             </div>
-
+            
             <div>
-              <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interested In</label>
+              <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service</label>
               <select id="service" name="service"
-                class="w-full px-4 py-3 bg-nyx-800/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/50 transition-colors">
+                class="w-full px-4 py-3 rounded-xl bg-nyx-900/80 border border-white/10 text-white focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/25 transition-all">
                 <option value="">Select a service...</option>
                 <option value="ai-agent">AI Agent Setup ($50–200)</option>
                 <option value="trading-bot">Trading Bot Development ($200–500)</option>
@@ -41,74 +50,106 @@ import Base from '../layouts/Base.astro';
                 <option value="content">Content Writing ($20–50/piece)</option>
                 <option value="scraping">Web Scraping ($30–100)</option>
                 <option value="automation">Custom Automation ($50–300)</option>
-                <option value="custom">Custom Project</option>
+                <option value="other">Something Else</option>
               </select>
             </div>
-
+            
             <div>
               <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
               <select id="budget" name="budget"
-                class="w-full px-4 py-3 bg-nyx-800/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/50 transition-colors">
+                class="w-full px-4 py-3 rounded-xl bg-nyx-900/80 border border-white/10 text-white focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/25 transition-all">
                 <option value="">Select budget...</option>
-                <option value="<100">Under $100</option>
-                <option value="100-300">$100 – $300</option>
-                <option value="300-500">$300 – $500</option>
+                <option value="under-50">Under $50</option>
+                <option value="50-100">$50–100</option>
+                <option value="100-300">$100–300</option>
+                <option value="300-500">$300–500</option>
                 <option value="500+">$500+</option>
               </select>
             </div>
-
+            
             <div>
               <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
               <textarea id="message" name="message" rows="5" required
-                class="w-full px-4 py-3 bg-nyx-800/50 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/50 transition-colors resize-none"
-                placeholder="Describe your project, goals, and any relevant details..."></textarea>
+                class="w-full px-4 py-3 rounded-xl bg-nyx-900/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-purple/50 focus:ring-1 focus:ring-accent-purple/25 transition-all resize-none" 
+                placeholder="Describe your project, goals, and timeline..."></textarea>
             </div>
-
-            <button type="submit"
-              class="w-full px-8 py-3.5 bg-accent-purple hover:bg-accent-violet text-white font-semibold rounded-xl transition-all hover:shadow-xl hover:shadow-accent-purple/25">
+            
+            <button type="submit" 
+              class="w-full px-8 py-3.5 bg-accent-purple hover:bg-accent-violet text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent-purple/25 hover:-translate-y-0.5 active:translate-y-0">
               Send Message →
             </button>
           </form>
         </div>
-
+        
         <!-- Sidebar -->
-        <div class="lg:col-span-2 space-y-8">
-          
+        <div class="lg:col-span-2 space-y-6">
           <!-- Direct Contact -->
-          <div class="p-6 rounded-2xl bg-nyx-800/50 border border-white/5">
-            <h3 class="text-lg font-semibold text-white mb-4">📧 Direct Contact</h3>
-            <p class="text-gray-400 text-sm mb-3">Prefer email? Reach out directly:</p>
-            <a href="mailto:nyx@hirenyx.com" class="text-accent-glow hover:text-accent-purple transition-colors font-mono text-sm">nyx@hirenyx.com</a>
-          </div>
-
-          <!-- Payment: Stripe -->
-          <div class="p-6 rounded-2xl bg-nyx-800/50 border border-white/5">
-            <h3 class="text-lg font-semibold text-white mb-4">💳 Pay with Stripe</h3>
-            <p class="text-gray-400 text-sm mb-4">Quick payment for agreed-upon work:</p>
-            <a href="#" class="inline-flex w-full justify-center px-6 py-2.5 bg-[#635bff] hover:bg-[#7a73ff] text-white text-sm font-medium rounded-lg transition-all">
-              Pay with Stripe →
-            </a>
-            <p class="text-xs text-gray-600 mt-2 text-center">Link activated after project scoping</p>
-          </div>
-
-          <!-- Payment: Crypto -->
-          <div class="p-6 rounded-2xl bg-nyx-800/50 border border-white/5">
-            <h3 class="text-lg font-semibold text-white mb-4">🪙 Pay with Crypto</h3>
-            <p class="text-gray-400 text-sm mb-3">USDC / ETH accepted:</p>
-            <div class="p-3 rounded-lg bg-nyx-900/80 border border-white/5">
-              <p class="text-xs text-gray-500 mb-1">Ethereum / USDC (ERC-20)</p>
-              <p class="font-mono text-xs text-accent-glow break-all select-all">0x000000000000000000000000000000000000dEaD</p>
+          <div class="fade-in p-6 rounded-2xl bg-nyx-800/50 border border-white/5" style="--delay: 100ms">
+            <h3 class="text-lg font-semibold text-white mb-4">Direct Contact</h3>
+            <div class="space-y-4">
+              <a href="mailto:nyx@hirenyx.com" class="flex items-center gap-3 text-gray-400 hover:text-accent-glow transition-colors group">
+                <span class="text-xl group-hover:scale-110 transition-transform">📧</span>
+                <div>
+                  <p class="text-sm font-medium text-white">Email</p>
+                  <p class="text-sm">nyx@hirenyx.com</p>
+                </div>
+              </a>
+              <a href="https://x.com/66nyx99" target="_blank" rel="noopener" class="flex items-center gap-3 text-gray-400 hover:text-accent-glow transition-colors group">
+                <span class="text-xl group-hover:scale-110 transition-transform">🐦</span>
+                <div>
+                  <p class="text-sm font-medium text-white">Twitter / X</p>
+                  <p class="text-sm">@66nyx99</p>
+                </div>
+              </a>
             </div>
-            <p class="text-xs text-gray-600 mt-2">⚠️ Contact before sending — wallet updated per project</p>
           </div>
-
-          <!-- Response time -->
-          <div class="p-6 rounded-2xl bg-gradient-to-br from-accent-purple/10 to-nyx-800/50 border border-accent-purple/20">
-            <h3 class="text-lg font-semibold text-white mb-2">⚡ Fast Response</h3>
-            <p class="text-gray-400 text-sm">I typically respond within <strong class="text-white">1–4 hours</strong>. Most projects scoped and started the same day.</p>
+          
+          <!-- Crypto -->
+          <div class="fade-in p-6 rounded-2xl bg-nyx-800/50 border border-white/5" style="--delay: 200ms">
+            <h3 class="text-lg font-semibold text-white mb-4">Pay with Crypto</h3>
+            <div class="space-y-3">
+              <div class="p-3 rounded-lg bg-nyx-900/80 border border-white/5">
+                <p class="text-xs text-accent-purple font-mono mb-1">SOL (Solana)</p>
+                <p class="text-xs text-gray-400 font-mono break-all select-all cursor-pointer hover:text-white transition-colors" title="Click to select">Coming soon</p>
+              </div>
+              <div class="p-3 rounded-lg bg-nyx-900/80 border border-white/5">
+                <p class="text-xs text-accent-purple font-mono mb-1">ETH (Ethereum)</p>
+                <p class="text-xs text-gray-400 font-mono break-all select-all cursor-pointer hover:text-white transition-colors" title="Click to select">Coming soon</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Response Time -->
+          <div class="fade-in p-6 rounded-2xl bg-gradient-to-br from-accent-purple/10 to-accent-violet/5 border border-accent-purple/20" style="--delay: 300ms">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+              </span>
+              <p class="text-sm font-medium text-white">Currently Online</p>
+            </div>
+            <p class="text-sm text-gray-400">Average response time: <span class="text-white font-medium">&lt; 2 hours</span></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </Base>
+
+<style>
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--delay, 0ms);
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  
+  select option { background: #0a0a0f; color: #e5e7eb; }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
