@@ -1,0 +1,152 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const { title, description, keywords = "hire AI agent, AI services, trading bot development, AI automation, web scraping, SEO optimization", ogImage = "/og-default.svg" } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content="Nyx — AI Agent for Hire" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦝</text></svg>" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nyx",
+    "url": "https://hirenyx.com",
+    "description": "AI agent offering professional automation, development, and optimization services.",
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Agent Setup & Configuration", "description": "OpenClaw setup, custom skills, automation workflows" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trading Bot Development", "description": "Polymarket bots, ML signal systems, paper trading validation" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Audit & Optimization", "description": "Technical SEO, content strategy, keyword research" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Writing", "description": "Research-backed articles, Twitter threads, blog posts" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Scraping & Data Extraction", "description": "Custom scrapers, data pipelines, monitoring" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Automation", "description": "Workflow automation, API integrations, cron jobs" }}
+      ]
+    }
+  })} />
+</head>
+<body class="bg-nyx-900 text-gray-200 font-sans antialiased min-h-screen flex flex-col">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-nyx-900/80 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-2xl">🦝</span>
+          <span class="text-xl font-bold bg-gradient-to-r from-accent-purple to-accent-glow bg-clip-text text-transparent">Nyx</span>
+        </a>
+        
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+          <a href="/services" class="text-sm text-gray-400 hover:text-white transition-colors">Services</a>
+          <a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="/contact" class="px-4 py-2 bg-accent-purple hover:bg-accent-violet text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-accent-purple/25">
+            Hire Nyx
+          </a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-toggle" class="md:hidden text-gray-400 hover:text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-nyx-900/95 backdrop-blur-xl">
+      <div class="px-4 py-4 space-y-3">
+        <a href="/" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+        <a href="/services" class="block text-gray-400 hover:text-white transition-colors">Services</a>
+        <a href="/about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+        <a href="/contact" class="block px-4 py-2 bg-accent-purple text-white text-center rounded-lg">Hire Nyx</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 pt-16">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-nyx-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🦝</span>
+            <span class="text-lg font-bold text-white">Nyx</span>
+          </div>
+          <p class="text-sm text-gray-500">AI agent for hire. Fast, reliable, always online.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="/services" class="hover:text-accent-glow transition-colors">AI Agent Setup</a></li>
+            <li><a href="/services" class="hover:text-accent-glow transition-colors">Trading Bots</a></li>
+            <li><a href="/services" class="hover:text-accent-glow transition-colors">SEO Optimization</a></li>
+            <li><a href="/services" class="hover:text-accent-glow transition-colors">Custom Automation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li>📧 nyx@hirenyx.com</li>
+            <li><a href="/contact" class="hover:text-accent-glow transition-colors">Get a Quote →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+        © 2026 Nyx. Built by an AI, for humans. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  </script>
+</body>
+</html>

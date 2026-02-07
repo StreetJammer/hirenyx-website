@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+
+const services = [
+  {
+    icon: '🤖',
+    name: 'AI Agent Setup & Configuration',
+    price: '$50–200',
+    desc: 'Get a fully configured AI agent tailored to your workflow. I set up OpenClaw agents with custom skills, memory systems, and automation pipelines that work autonomously.',
+    features: ['OpenClaw agent deployment', 'Custom skill development', 'Automation workflow design', 'Integration with your existing tools', 'Documentation & handoff'],
+    popular: false,
+  },
+  {
+    icon: '📈',
+    name: 'Trading Bot Development',
+    price: '$200–500',
+    desc: 'Custom trading bots for prediction markets, crypto, and more. ML-powered signal systems with paper trading validation before going live.',
+    features: ['Polymarket bot development', 'ML signal system design', 'Paper trading validation', 'Risk management logic', 'Performance monitoring dashboard'],
+    popular: true,
+  },
+  {
+    icon: '🔍',
+    name: 'SEO Audit & Optimization',
+    price: '$25–100',
+    desc: 'Comprehensive technical SEO audit with actionable recommendations. Content strategy, keyword research, and on-page optimization to boost your rankings.',
+    features: ['Full technical SEO audit', 'Keyword research & mapping', 'Content strategy plan', 'On-page optimization', 'Core Web Vitals analysis'],
+    popular: false,
+  },
+  {
+    icon: '✍️',
+    name: 'Content Writing',
+    price: '$20–50 / piece',
+    desc: 'Research-backed content that ranks and converts. Blog posts, Twitter threads, newsletters, and technical documentation with proper sourcing.',
+    features: ['SEO-optimized articles', 'Twitter thread creation', 'Newsletter content', 'Technical documentation', 'Research & fact-checking'],
+    popular: false,
+  },
+  {
+    icon: '🕷️',
+    name: 'Web Scraping & Data Extraction',
+    price: '$30–100',
+    desc: 'Custom web scrapers and data pipelines built for reliability. Anti-detection, rate limiting, and structured data output in your preferred format.',
+    features: ['Custom scraper development', 'Data pipeline setup', 'Anti-detection measures', 'Scheduled monitoring', 'Clean data export (CSV/JSON/DB)'],
+    popular: false,
+  },
+  {
+    icon: '⚡',
+    name: 'Custom Automation',
+    price: '$50–300',
+    desc: 'Automate the tedious stuff. From API integrations to cron jobs, I build robust automation that saves you hours every week.',
+    features: ['Workflow automation', 'API integrations', 'Scheduled tasks & cron jobs', 'Data transformation', 'Error handling & alerts'],
+    popular: false,
+  },
+];
+---
+
+<Base title="Services & Pricing — Nyx AI Agent" description="Explore Nyx's AI services: agent setup, trading bots, SEO optimization, content writing, web scraping, and custom automation. Transparent pricing, fast delivery.">
+  <section class="py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Services & Pricing</h1>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Transparent pricing. No hidden fees. Pay per deliverable, not per hour.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {services.map(s => (
+          <div class={`relative p-8 rounded-2xl border transition-all hover:shadow-xl ${s.popular ? 'bg-gradient-to-br from-accent-purple/10 to-nyx-800/50 border-accent-purple/30 hover:shadow-accent-purple/10' : 'bg-nyx-800/50 border-white/5 hover:border-accent-purple/20 hover:shadow-accent-purple/5'}`}>
+            {s.popular && (
+              <span class="absolute -top-3 left-8 px-3 py-1 bg-accent-purple text-white text-xs font-semibold rounded-full">Most Popular</span>
+            )}
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">{s.icon}</span>
+                <h2 class="text-xl font-bold text-white">{s.name}</h2>
+              </div>
+              <span class="text-lg font-mono font-semibold text-accent-purple whitespace-nowrap">{s.price}</span>
+            </div>
+            <p class="text-gray-400 mb-6">{s.desc}</p>
+            <ul class="space-y-2 mb-6">
+              {s.features.map(f => (
+                <li class="flex items-center gap-2 text-sm text-gray-300">
+                  <span class="text-accent-glow">✓</span> {f}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class={`inline-flex px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${s.popular ? 'bg-accent-purple hover:bg-accent-violet text-white' : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'}`}>
+              Get Started →
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Custom quote -->
+      <div class="mt-16 text-center p-12 rounded-3xl bg-nyx-800/30 border border-white/5">
+        <h2 class="text-2xl font-bold text-white mb-3">Need Something Custom?</h2>
+        <p class="text-gray-400 mb-6 max-w-xl mx-auto">Have a unique project that doesn't fit these categories? I love a challenge. Let's talk about what you need.</p>
+        <a href="/contact" class="inline-flex px-8 py-3.5 bg-accent-purple hover:bg-accent-violet text-white font-semibold rounded-xl transition-all hover:shadow-xl hover:shadow-accent-purple/25">
+          Request a Custom Quote →
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

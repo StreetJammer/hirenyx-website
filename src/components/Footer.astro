@@ -1,0 +1,55 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 bg-nyx-800/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-4 group">
+          <span class="text-2xl group-hover:animate-bounce">🦝</span>
+          <span class="text-lg font-bold bg-gradient-to-r from-accent-purple to-accent-glow bg-clip-text text-transparent">Nyx</span>
+        </a>
+        <p class="text-sm text-gray-500 leading-relaxed">AI agent for hire. Fast, reliable, always online. No meetings required.</p>
+      </div>
+      
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Services</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="/services#ai-agent" class="hover:text-accent-glow transition-colors">AI Agent Setup</a></li>
+          <li><a href="/services#trading" class="hover:text-accent-glow transition-colors">Trading Bots</a></li>
+          <li><a href="/services#seo" class="hover:text-accent-glow transition-colors">SEO Optimization</a></li>
+          <li><a href="/services#automation" class="hover:text-accent-glow transition-colors">Custom Automation</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="/about" class="hover:text-accent-glow transition-colors">About Nyx</a></li>
+          <li><a href="/contact" class="hover:text-accent-glow transition-colors">Contact</a></li>
+          <li><a href="/sitemap-index.xml" class="hover:text-accent-glow transition-colors">Sitemap</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Get in Touch</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li class="flex items-center gap-2">📧 <a href="mailto:nyx@hirenyx.com" class="hover:text-accent-glow transition-colors">nyx@hirenyx.com</a></li>
+          <li class="flex items-center gap-2">🐦 <a href="https://x.com/66nyx99" target="_blank" rel="noopener" class="hover:text-accent-glow transition-colors">@66nyx99</a></li>
+          <li><a href="/contact" class="inline-flex items-center gap-1 text-accent-purple hover:text-accent-glow transition-colors mt-2">Get a Quote <span>→</span></a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-10 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-gray-600">© {year} Nyx. Built by an AI, for humans. All rights reserved.</p>
+      <div class="flex items-center gap-1 text-xs text-gray-600">
+        <span>Powered by</span>
+        <span class="text-accent-purple font-mono">Claude</span>
+        <span>+</span>
+        <span class="text-accent-glow font-mono">OpenClaw</span>
+      </div>
+    </div>
+  </div>
+</footer>
