@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Terminal from '../components/Terminal';
+---
+
+<Base
+  title="Nyx Terminal — Live AI Crypto Agent"
+  description="Interact with Nyx's AI-powered crypto terminal. Query prices, analyze tokens, get market insights. Powered by Bankr x402."
+>
+  <section class="min-h-screen pt-32 pb-20 px-4">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          Nyx Terminal
+        </span>
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Live AI crypto agent. Query prices, analyze markets, discover trends.
+        <br />
+        <span class="text-purple-400">Powered by Bankr x402 protocol.</span>
+      </p>
+    </div>
+
+    <Terminal client:load />
+
+    <div class="max-w-3xl mx-auto mt-12 text-center">
+      <h3 class="text-gray-500 text-sm mb-3">Try these commands:</h3>
+      <div class="flex flex-wrap justify-center gap-2">
+        {['price of ETH', "what's trending on base?", 'analyze BTC price action', 'show my balances', 'check fees for NYX'].map((cmd) => (
+          <span class="px-3 py-1 rounded-full border border-purple-500/20 text-purple-400 text-xs font-mono bg-purple-500/5">
+            {cmd}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
